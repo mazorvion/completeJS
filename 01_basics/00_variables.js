@@ -1,7 +1,7 @@
 const accountId = 144553
-let accountEmail = "vikas@gmail.com"
+let accountEmail = "okok@gmail.com"
 var accountPassword = "1234"
-accountCity = "Bhopal" // It will behave similar to var accountCity = "Bhopal";
+accountCity = "Jammu" // It will behave similar to var accountCity = "Bhopal";
 let accountState;
 
 // var test = 99999
