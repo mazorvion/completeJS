@@ -37,3 +37,33 @@ console.log(typeof heros)
 // const outsideTemp = null
 // console.log(typeof outsideTemp)
 
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++
+console.log("MEMORY: ")
+// Types of Memories
+//Stack (jaha Primitive use hote ho)and Heap (Jaha Non-Primitive use hota ho)
+
+
+let myPenName = "mzrv";
+
+let anotherName = myPenName
+anotherName = "Ryan"
+
+console.log(anotherName)
+
+let userOne = {
+    name: "ben",
+    email: "ben@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "ten@gmail.com"
+
+console.log(userOne)
+console.log(userTwo)
+
+
+
