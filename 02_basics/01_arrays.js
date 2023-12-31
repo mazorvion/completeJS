@@ -35,3 +35,20 @@ const arrNum2 = myArr.splice(1, 3) // changes the array and removes the elems fr
 console.log(arrNum2)
 
 console.log("C: ", myArr)
+
+
+const arr1 = [1,2,3,4,5,6,7]
+const arr2 = arr1
+const arr3 = arr2
+arr3.push(9)
+console.log(arr1)
+arr3.pop()
+console.log(arr3)
+const arr4 = arr3.slice(1, 3)
+console.log("arr4 ", arr4)
+console.log("arr3", arr3)
+const arr5 = arr3.splice(1, 4)
+console.log("arr5 ", arr5)
+console.log("arr3", arr3)
+console.log("arr2", arr2)
+console.log("arr1", arr1)
