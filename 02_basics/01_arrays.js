@@ -31,7 +31,7 @@ const arrNum1 = myArr.slice(1, 3)
 console.log(arrNum1) // returs value from start to stop which is 1 to 3 index excluding stop point
 console.log("B: ", myArr)
 
-const arrNum2 = myArr.splice(1, 3)
+const arrNum2 = myArr.splice(1, 3) // changes the array and removes the elems from index start to stop including stop
 console.log(arrNum2)
 
 console.log("C: ", myArr)
