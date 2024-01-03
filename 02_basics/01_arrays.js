@@ -41,9 +41,9 @@ const arr1 = [1,2,3,4,5,6,7]
 const arr2 = arr1
 const arr3 = arr2
 arr3.push(9)
-console.log(arr1)
+console.log("arr1: ", arr1)
 arr3.pop()
-console.log(arr3)
+console.log("arr3", arr3)
 const arr4 = arr3.slice(1, 3)
 console.log("arr4 ", arr4)
 console.log("arr3", arr3)
