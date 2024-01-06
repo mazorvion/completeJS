@@ -70,7 +70,7 @@ console.log(addThree(2,2,2))
 //way2  - using perenthesis instead of return  keyword
 // const addTwo = (num1, num2) => (num1 + num2)
 const addTwo = (num1, num2) => ({
-    calculated: num1 + num2
+calculated: num1 + num2
 })
 console.log(addTwo(2, 3))
 
