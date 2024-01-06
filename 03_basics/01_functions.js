@@ -50,11 +50,35 @@ function calculateCartPrice(...num1){
     return num1
 }
 
-console.log(calculateCartPrice(200, 400, 500, 800))
+// console.log(calculateCartPrice(200, 400, 500, 800))
 
 
 function calculateCartPrice2(val1, val2, ...num1){
-    return num1
+    return {"val1": val1, "val2": val2, "num1": num1}
 }
 
-console.log(calculateCartPrice2(100, 200, 300))
+// console.log(calculateCartPrice2(100, 500, 400, 300, 200))
+// OUTPUT: { val1: 100, val2: 500, num1: [ 400, 300, 200 ] }
+// because 100 was assinged as val1, val 2 was assinged as 400 hence num1 holded rest of the arguments
+
+
+const user = {
+    username: "john",
+    price: 299,
+}
+
+function handleObject(anyObject){
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`)
+}
+
+// handleObject(user)
+
+const myNewArray = [100 ,200 ,300, 400]
+
+function returnSecondValue(array){
+    return array[1]
+}
+
+// console.log(returnSecondValue(myNewArray))
+// console.log(returnSecondValue([900, 123, 123, 4250])) // OUTPUT: 123
+
