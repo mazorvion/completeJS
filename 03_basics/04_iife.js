@@ -1,7 +1,9 @@
 // Immediately invoked function expression (IIFE)
+// iife helps you create private variables in js
+// that helps in not polluting the global
+// because iife invoked immedieatly after definition by iteself it is often used in configuration such as connect to db or something so that jaise hi koi site pe aaye ye code chal jaye 
 
 let a = 200;
-
 
 (function abc(){
     // named iife
@@ -11,6 +13,7 @@ let a = 200;
 })();
 
 
+// console.log(b) // ERROR BECAUSE B IS NOW PRIVATE VARIABLE
 
 
 ((name) => {
