@@ -67,9 +67,12 @@ console.log(addThree(2,2,2))
 // An implicit return is a way of returning a value from a function without explicitly using the return keyword
 //way 1
 // const addTwo = (num1, num2) => num1 + num2
+
+
 //way2  - using perenthesis instead of return  keyword 
 // const addTwo = (num1, num2) => (num1 + num2)
-// these paranthesis also allows to send objects without them we won't be able to send objects
+// these paranthesis also allows to send objects without them we won't be able to send objects while doing implicit return
+
 const addTwo = (num1, num2) => ({
 calculated: num1 + num2
 })
