@@ -52,7 +52,7 @@ for (let index = 0; index < arr.length; index++) {
 for (let index = 1; index <= 20; index++) {
     if (index == 5){
         console.log(`detected 5`)
-        continue
+        continue // skips the code below for once and continue the loop
     }
     console.log(`value of index us ${index}`)
     
