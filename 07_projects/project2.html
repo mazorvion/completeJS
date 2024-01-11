@@ -1,0 +1,232 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+        <style>
+            * {
+      font-family: Quicksand;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    body {
+      margin: 0;
+      height: 100vh;
+      padding: 0;
+      border: 0;
+      background: linear-gradient(to bottom right,  #F1F2B5, #eef2f3);
+    }
+    
+    .form {
+      background-color: #fff;
+      height: auto;
+      width: 450px;
+      border-radius: 20px;
+      margin: 20px auto 20px auto;
+      display: block;
+      border: solid 1px #289df6;
+      padding: 20px;
+      box-shadow: 0 0 40px 0 #ddd;
+    }
+    
+    .form:hover {
+      box-shadow: 0 0 60px 0 #ccc;
+      transition: .4s;
+      transform: scale(1.02);
+    }
+    
+    .row-one {
+      padding: 20px;
+    }
+    
+    .row-two {
+      padding: 20px;
+    }
+    
+    .text-input {
+      width: 60px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #dbeffe;
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    
+    .text-input:last-child {
+      margin-bottom: 35px;
+    }
+    
+    .text-input:hover {
+      background-color: #cbe7fd;
+    }
+    
+    #submit {
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+      width: 140px;
+      background-color: #289df6;
+      color: #fff;
+      margin: auto;
+      display: block;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    #submit:hover{
+      background-color: #0a8ef2;
+    }
+    
+    .text {
+      display: inline-block;
+      margin: 5px 20px 5px 8px;;
+    }
+    
+    .row-one {
+      padding: 30px 20px 15px 20px;
+    }
+    .row-two {
+      padding: 15px 20px 30px 20px;
+    }
+    
+    .container {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .container input {
+      position: absolute;
+      opacity: 0;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #dbeffe;
+      border-radius: 50%;
+    }
+    
+    .container:hover input ~ .checkmark {
+      background-color: #cbe7fd;
+    }
+    
+    .container input:checked ~ .checkmark {
+      background-color: #289df6;
+    }
+    
+    h1 {
+      font-size: 30px;
+      font-weight: 300;
+      text-align: center;
+      color: #289df6;
+      padding-top: 15px;
+      display: block;
+    }
+    
+    h2 {
+      font-size: 22px;
+      font-weight: 300;
+      text-align: center;
+    }
+    
+    h3 {
+      font-size: 24px;
+      font-weight: 300;
+      text-align: center;
+      padding: 15px;
+    }
+    
+    h3 b {
+      font-size: 32px;
+      font-weight: 300;
+      color: #289df6;
+    }
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+        </style>
+      </head>
+    
+      <body>
+        <h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
+      <form class="form" id="form" >
+        <div class="row-two">
+          <input type="text" class="text-input" id="height" autocomplete="off" ><p class="text">Height (cm)</p>
+          <input type="text" class="text-input" id="weight" autocomplete="off" ><p class="text">Weight (kg)</p>
+        </div>
+        <input type="submit" name="" id="submit">
+      </form>
+
+      <h3 id="results"><b>Results will be here</b></h3>
+    
+      <script>
+
+        const form = document.querySelector("form")
+
+        form.addEventListener("submit", function(event){
+          event.preventDefault()
+          const results = document.querySelector("#results")
+          const height = parseInt(document.querySelector("#height").value)
+          const weight = parseInt(document.querySelector("#weight").value)
+          if ( height === '' || height < 0 || isNaN(height)){
+            results.innerHTML = "Please give a valid height"
+          }else if ( weight === '' || weight < 0 || isNaN(weight)){
+            results.innerHTML = "Please give a valid weight"
+          }else{
+            let bmi = weight / Math.pow((height / 100), 2)
+            results.innerHTML = bmi.toFixed(2)
+            const h2 = document.createElement("h3")
+
+              switch (true) {
+              case bmi < 18.6:
+                  h2.innerText = "You are UnderWeight"
+                  results.appendChild(h2)
+                break;
+              case bmi > 18.6 && bmi < 24.9:
+                  h2.innerText = "You are in Normal Range"
+                  results.appendChild(h2)
+                break;
+              case bmi > 24.9:
+                  h2.innerText = "You are OverWeight"
+                  results.appendChild(h2)
+                break;
+            
+              default:
+                break;
+            }
+          }
+          
+          
+
+        })
+
+      </script>
+      </body>
+  </html>
