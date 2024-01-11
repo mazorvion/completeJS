@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .boxes{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black
+        }
+
+        .box{
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .grey{
+            background-color: grey;
+        }
+        .white{
+            background-color: white;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Color Scheme Switcher</h2>
+    <div class="box">
+        <div class="boxes grey" ></div>
+        <div class="boxes white"></div>
+        <div class="boxes blue"></div>
+        <div class="boxes yellow"></div>
+    </div>
+    
+    <h2>Try clicking on one of the colors above to change the background color of this page</h2>
+</body>
+
+<script>
+
+    const body = document.querySelector("body")
+    const boxes = document.querySelectorAll(".boxes")
+
+    boxes.forEach(function(box){
+        
+        box.addEventListener("click", (event)=>{
+            body.style.backgroundColor = `${getComputedStyle(box).backgroundColor}`
+        })
+      
+    })
+
+</script>
+</html>
