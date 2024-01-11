@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors 🎨</title>
+
+    <style>
+        body {
+            background-color: rgb(254, 253, 255);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>KeyCheck ⌨</h1><br>
+    <h2></h2>
+
+
+
+    <script>
+        const h2 = document.querySelector("h2")
+
+        window.addEventListener("keydown", (event) => {
+            if (event.key != 'Backspace'){
+                h2.innerHTML += `${event.key}`
+            }else{
+                var h2Content = h2.innerHTML;
+                var elements = h2Content.split('');
+                elements.pop();
+
+                var newContent = elements.join('');
+                console.log(newContent)
+                h2.innerHTML = newContent
+            }
+
+        })
+
+    </script>
+</body>
+</html>

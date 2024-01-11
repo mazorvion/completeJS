@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors 🎨</title>
+
+    <style>
+        body {
+            background-color: rgb(254, 253, 255);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Unlimited Colors 🎨</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    
+
+
+
+    <script>
+        console.log()
+
+        const body = document.querySelector("body")
+
+        function randomColorByHex(){
+            const hex = "0123456789ABCDEF"
+            let color = '#'
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)]
+               
+            }
+            return color
+        }
+       
+    
+        function getRandomColor() {
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            const color = `rgb(${red}, ${green}, ${blue})`;
+            return color;
+        }
+
+        document.querySelector("#start").addEventListener("click", function(e){
+
+            let colorChange = setInterval(function(){
+                body.style.backgroundColor =  randomColorByHex()
+            }, 100)
+
+            document.querySelector("#stop").addEventListener("click", function(){
+                clearInterval(colorChange)
+            })
+            
+        })
+
+        
+
+    </script>
+</body>
+</html>

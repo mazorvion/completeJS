@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+  font-family: sans-serif;
+}
+body {
+  width: 50%;
+  max-width: 800px;
+  min-width: 480px;
+  margin: 0 auto;
+}
+.lastResult {
+  color: white;
+  padding: 3px;
+}
+    </style>
+</head>
+<body>
+    <h1>Number guessing game</h1>
+
+<p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or less. We'll tell you if your guess was too high or too low.</p>
+
+<form class="form">
+  <label for="guessField">Enter a guess:</label>
+    <input type="text" id="guessField" class="guessField">
+    <input type="submit" value="Submit guess" class="guessSubmit">
+</form>
+
+<div class="resultParas">
+  <p class="lowOrHi" style="background-color: rgb(255, 30, 0);"></p>
+  <h3 class="win" style="background-color: rgb(25, 228, 255);"></h3>
+  <p class="guesses" style="background-color: yellow;"></p>
+  <p class="guessRemaining" style="background-color: green; color: white;"></p>
+  <button  style="display: none; padding: 10px 20px;">TRY AGAIN</button>
+</div>
+
+
+
+<script>
+    
+    function newGame(){
+        const form = document.querySelector("form")
+        let randomNum = Math.floor((Math.random() * 100) + 1)
+        let totalGuess = 10
+        const winningLine = document.querySelector("h3")
+        const guesses = document.querySelector(".guesses")
+        const lowOrHi = document.querySelector(".lowOrHi")
+        const guessRemaining = document.querySelector(".guessRemaining")
+        console.log(randomNum)
+
+        form.addEventListener("submit", function(event){
+            const guess = parseInt(document.querySelector("#guessField").value)
+            event.preventDefault()
+            if (totalGuess != 0){
+
+                if (randomNum !== guess){
+                totalGuess -= 1
+                winningLine.innerHTML = ""    
+                guesses.innerHTML = `Previous Guess Was ${guess}`
+                guessRemaining.innerHTML = `You Have ${totalGuess} Guesses Left`
+
+                if (guess > randomNum){
+                    lowOrHi.innerHTML = `it's high`
+                }else if (guess < randomNum){
+                    lowOrHi.innerHTML = `it's low`
+                }
+
+            
+                }else{
+                    guesses.innerHTML = ``
+                    guessRemaining.innerHTML = ``
+                    lowOrHi.innerHTML = ``
+                    winningLine.innerHTML = "Hurray You Win"
+                    randomNum = Math.floor((Math.random() * 100) + 1)
+                    console.log(randomNum)
+                    totalGuess = 10
+
+                }
+            }else{
+                const tryAgain = document.querySelector("button")
+                guessRemaining.innerHTML = `You are Out of Guesses`
+                lowOrHi.innerHTML = ``
+                guesses.innerHTML = ``
+                tryAgain.style.display = "block"
+                tryAgain.addEventListener("click", function(event){
+                    newGame()
+                })
+
+            }
+        })
+    }
+    newGame()
+    
+</script>
+</body>
+</html>

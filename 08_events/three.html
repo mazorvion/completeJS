@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(254, 253, 255);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>ZTM JS</h1>
+    <button id="stop">Stop</button>
+    <button id="start">start</button>
+
+
+
+    <script>
+
+        const sayDate = (str) => {
+            console.log(str,  Date.now())
+        }
+
+        
+        
+
+        
+        
+        document.querySelector("#start").addEventListener("click", () => {
+            const interval = setInterval(sayDate, 1000, "Time IS");
+            document.querySelector("#stop").addEventListener("click", () => {
+            clearInterval(interval)
+            console.log("interval has been stopped")
+            })
+        })
+        
+    </script>
+</body>
+</html>
