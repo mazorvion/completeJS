@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+      
+            background-color: rgb(32, 32, 32);
+        }
+        .clock{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 10px;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: 40px;
+            background-color: rgb(240, 161, 43);
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="clock">
+        <span id="time"></span>
+    </div>
+
+    <script>
+        const clock = document.getElementById("clock")
+        const timeSpan = document.querySelector("#time")
+        setInterval(function(){
+            let date = new Date().toLocaleTimeString()
+            timeSpan.innerHTML = date
+        }, 1000)
+    </script>
+</body>
+
+
+</html>
