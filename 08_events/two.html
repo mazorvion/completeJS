@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-        body {
-            background-color: rgb(254, 253, 255);
-        }
-        
+      body {
+        background-color: rgb(254, 253, 255);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Chai or Code</h1>
     <button id="stop">Stop</button>
 
-
-
     <script>
+      const changeH1 = () => {
+        document.querySelector("h1").innerHTML = "🚗🚗🚗";
+      };
 
-        const changeH1 = () => {
-            document.querySelector("h1").innerHTML = "🚗🚗🚗"
-        } 
-        
-        const changeMe = setTimeout(changeH1, 2000)
+      const changeMe = setTimeout(changeH1, 2000);
 
-        document.querySelector("button").addEventListener("click", () => {
-            clearTimeout(changeMe)
-            console.log('stopped')
-        })
-        
+      document.querySelector("button").addEventListener("click", () => {
+        clearTimeout(changeMe);
+        console.log("stopped");
+      });
     </script>
-</body>
+  </body>
 </html>

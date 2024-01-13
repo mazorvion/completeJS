@@ -104,6 +104,7 @@ consumePromise5();
 // getAllUsers()
 
 fetch("https://api.github.com/users/mazorvion")
+  // when calling fetch it adds itself in microtask which is executed as priority
   .then(function (response) {
     return response.json();
   })
